@@ -1,0 +1,49 @@
+terraform version
+To check terraform version
+
+Step 1
+terraform init
+
+Step 2
+terraform validate
+terraform import azurerm_resource_group.resourcegroupname "ResourceID" 
+terraform import azurerm_resource_group.rg "/subscriptions/9734ed68-621d-47ed-babd-269110dbacb1/resourceGroups/813-4eeaacb8-hands-on-with-terraform-on-azure"
+
+Step 3
+terraform plan -out tfplan
+terraform plan -out filename
+terraform plan -out dev.tfplan
+To save plan in a file
+
+terraform plan -out --target=module.module_dev 
+To plan specific environment
+
+terraform plan -out -var-file="dev.tfvars"
+To plan specific environment for dev environment
+
+Step 4
+terraform apply tfplan
+terraform apply filename
+To apply file
+
+terraform apply --auto-approve
+To auto approve apply
+
+terraform apply --target=module.module_prod
+terraform apply --target=module.module_name
+To apply specific environment
+
+terraform workspace new dev
+To create specific workspace for dev environment
+
+terraform workspace select dev
+To switch specific workspace
+
+terraform workspace list
+To check all workspaces
+
+terraform workspace show
+To check current workspace
+
+terraform apply -var-file="dev.tfvars"
+To apply specific workspace on dev environment
