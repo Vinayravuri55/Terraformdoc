@@ -35,6 +35,7 @@ To apply specific environment
 
 terraform workspace new dev
 To create specific workspace for dev environment
+Create environment after init before validate
 
 terraform workspace select dev
 To switch specific workspace
